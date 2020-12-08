@@ -12,10 +12,12 @@ public class ArraySequence implements IntegerSequence{
   //Postcondition: The otherseq will be reset.
   //This constructor will copy ALL values of the `otherseq` into the data array.
   public ArraySequence(IntegerSequence otherseq){
+    otherseq.reset();
     data = new int[otherseq.length()];
     for(int i = 0; i < otherseq.length(); i++){
       data[i] = otherseq.next();
     }
+    otherseq.reset();
   }
 
   public boolean hasNext(){
